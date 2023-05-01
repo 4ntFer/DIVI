@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="add_room_botton">Adicionar sala</string>
+    <string name="add_product_button">Adicionar produto</string>
+    <string name="add_guest_button">Adicionar convidado</string>
+    <string name="product_name_text">Nome do produto</string>
+    <string name="product_name_val">Cerveja, petiscos, etc.</string>
+    <string name="product_value_text">Valor do produto</string>
+    <string name="product_value_val">R$ 25,00</string>
+    <string name="confirmar">Confirmar</string>
+</resources>
