@@ -57,7 +57,6 @@ public class NewProductLayout extends AppCompatActivity {
 
         Produto novoProduto;
 
-        participantes.add(user);
         novoProduto = new Produto(prodId, user,participantes,val, 0,nome);
 
         sala.addProduto(novoProduto);
