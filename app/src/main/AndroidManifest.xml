@@ -13,13 +13,22 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".new_product"
+            android:name=".DebitosSalaActivity"
             android:exported="false" />
         <activity
-            android:name=".tela_layout_produtos"
+            android:name=".DetalhesProdutoActivity"
             android:exported="false" />
         <activity
-            android:name=".tela_layout_salas"
+            android:name=".NewGuestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NewProductLayout"
+            android:exported="false" />
+        <activity
+            android:name=".ProdutosLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SalaLayoutActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

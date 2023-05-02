@@ -8,4 +8,6 @@
     <string name="product_value_text">Valor do produto</string>
     <string name="product_value_val">R$ 25,00</string>
     <string name="confirmar">Confirmar</string>
+    <string name="nome_do_convidado">Nome do convidado</string>
+    <string name="mostrar_calc">Mostrar todos os debitos</string>
 </resources>

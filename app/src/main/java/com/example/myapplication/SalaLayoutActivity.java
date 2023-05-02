@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -15,9 +14,9 @@ import java.util.ArrayList;
 import States.State;
 import func_classes.Sala;
 
-public class tela_layout_salas extends AppCompatActivity {
+public class SalaLayoutActivity extends AppCompatActivity {
     private Context activity = this;
-    State instance = State.getInstance(); //Carrega o estado
+    private final State instance = State.getInstance(); //Carrega o estado
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +40,13 @@ public class tela_layout_salas extends AppCompatActivity {
 
     private void handleClick(ArrayList<Sala> salas, LinearLayout rooms_layout) {
         String nome_sala = "Sala" + salas.size();
+        int index;
+        Sala novaSala = new Sala(nome_sala);
 
         //Adiciona a uma nova sala à coleção de salas
-        salas.add(new Sala(nome_sala));
+        novaSala.addParticipante(instance.getUser());
+        salas.add(novaSala);
+        index  = salas.size() - 1;
 
 
                 /*Cria novo botão e define seu nome e seu
@@ -55,16 +58,17 @@ public class tela_layout_salas extends AppCompatActivity {
         //Adiciona o botão ao layout e a coleção de botões de sala
         rooms_layout.addView(new_button);
 
+
         new_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                abrir_layout_produtos(salas.size()-1);
+                abrir_layout_produtos(index);
             }
         });
     }
 
     private void abrir_layout_produtos(int indexSala){
-        Intent intent_layout_produtos = new Intent(this, tela_layout_produtos.class);
+        Intent intent_layout_produtos = new Intent(this,ProdutosLayoutActivity.class);
         intent_layout_produtos.putExtra("indexSala", indexSala);
         startActivity(intent_layout_produtos);
     }

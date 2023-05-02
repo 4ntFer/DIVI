@@ -7,15 +7,22 @@ public class Produto {
      private Pessoa pagador;
      private String nome;
      private int iconeId;
+
+     private int id;
      private float valor;
      private ArrayList<Float> todosValores;
 
-     public Produto(Pessoa pagador, ArrayList<Pessoa> participantes, float valor, int iconeId, String nome){
+     private float valorDividido;
+
+     public Produto(int id, Pessoa pagador, ArrayList<Pessoa> participantes, float valor, int iconeId, String nome){
           this.pagador = pagador;
           this.participantes = participantes;
           this.valor = valor;
           this.iconeId = iconeId;
           this.nome = nome;
+          this.id = id;
+
+          calculaConta();
      }
 
      public String getNome(){
@@ -30,6 +37,8 @@ public class Produto {
           return valor;
      }
 
+     public int getId(){return id;}
+
      public void setIcone(int id){
           iconeId = id;
      }
@@ -40,5 +49,24 @@ public class Produto {
 
      public void addValor(float val){
           todosValores.add(val);
+     }
+
+     private void calculaConta(){
+          valorDividido = valor/participantes.size();
+          for(int i = 0; i<participantes.size() ; i++){
+               participantes.get(i).addDebito(valorDividido, null, this);
+          }
+     }
+
+     public void setId(int id){
+          this.id = id;
+     }
+
+     public ArrayList<Pessoa> getParticipantes(){
+          return participantes;
+     }
+
+     public float getValorDividido(){
+          return valorDividido;
      }
 }

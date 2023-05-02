@@ -11,6 +11,7 @@ public class Sala {
     public Sala(String nome){
         this.nome = nome;
         this.produtos = new ArrayList<Produto>();
+        this.participantes = new ArrayList<Pessoa>();
     }
 
     public void addProduto(Produto produto){

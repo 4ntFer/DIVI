@@ -5,13 +5,15 @@ import java.util.ArrayList;
 public class Pessoa {
     private String nome;
     private int iconId;
-    private ArrayList<Conta> debito;
-    private ArrayList<Conta> credito;
+    private ArrayList<Conta> debitos;
+    private ArrayList<Conta> creditos;
     private boolean admin;
 
     public Pessoa(String nome, int iconId){
         this.nome = nome;
         this.iconId = iconId;
+        debitos = new ArrayList<Conta>();
+        creditos = new ArrayList<Conta>();
     }
 
     public String getNome(){
@@ -26,19 +28,27 @@ public class Pessoa {
         return admin;
     }
 
-    public ArrayList<Conta> getDebito(){
-        return debito;
+    public ArrayList<Conta> getDebitos(){
+        return debitos;
     }
 
-    public ArrayList<Conta> getCredito(){
-        return credito;
+    public ArrayList<Conta> getCreditos(){
+        return creditos;
     }
 
     public void addDebito(float val, Pessoa relacionado, Produto prod){
-        debito.add(new Conta(val,relacionado,prod));
+        debitos.add(new Conta(val,relacionado,prod));
     }
 
     public void addCredito(float val, Pessoa relacionado, Produto prod){
-        credito.add(new Conta(val,relacionado,prod));
+        creditos.add(new Conta(val,relacionado,prod));
+    }
+
+    public float getDebitoTotal(){
+        float debitoTotal = 0;
+        for(int i = 0; i < debitos.size() ; i++){
+            debitoTotal += debitos.get(i).getValor();
+        }
+        return debitoTotal;
     }
 }

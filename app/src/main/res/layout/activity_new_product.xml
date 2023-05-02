@@ -65,7 +65,7 @@
         android:inputType="text"
         android:numeric="decimal"
         android:text="@string/product_value_val"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintBottom_toTopOf="@+id/PartyScrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,30 +73,30 @@
         app:layout_constraintVertical_bias="0.086" />
 
     <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="411dp"
-        android:layout_height="241dp"
-        android:layout_marginStart="1dp"
+        android:id="@+id/PartyScrollView"
+        android:layout_width="321dp"
+        android:layout_height="232dp"
+        android:layout_marginStart="46dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginEnd="44dp"
         android:layout_marginBottom="239dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/product_value_text"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
+            android:id="@+id/party_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical"></LinearLayout>
     </ScrollView>
 
     <Button
         android:id="@+id/confirm_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="124dp"
+        android:layout_height="57dp"
         android:layout_marginStart="150dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="149dp"
@@ -105,6 +105,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintTop_toBottomOf="@+id/PartyScrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
