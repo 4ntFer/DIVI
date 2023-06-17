@@ -8,7 +8,7 @@ import func_classes.Sala;
 public class State {
     private static State instance = null;
     private ArrayList<Sala> salas = new ArrayList<Sala>();
-    private Pessoa User = new Pessoa("Eu", 0);
+    //private Pessoa User = new Pessoa("Eu", 0);
 
     public static State getInstance() {
         if(instance == null){
@@ -26,7 +26,7 @@ public class State {
         return salas.get(index);
     }
 
-    public Pessoa getUser(){
+    /*public Pessoa getUser(){
         return  User;
-    }
+    }*/
 }

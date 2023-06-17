@@ -51,8 +51,9 @@ public class NewProductLayout extends AppCompatActivity {
     }
 
     private void addProd(String nome, float val, ArrayList<Pessoa> participantes){
-        Pessoa user = instance.getUser();
         Sala sala = instance.getSala(getIntent().getIntExtra("indexSala", 0));
+        //O primeiro a entrar na sala, será o pagante (mudar futuramente)
+        Pessoa user = sala.getParticipantes().get(0);
         int prodId = sala.getProdutos().size();
 
         Produto novoProduto;
